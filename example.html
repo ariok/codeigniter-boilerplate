@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>Codeigniter-Boilerplate</title>
+        <title>Example!</title>
   
-        <meta name="description" content="Codeigniter-Boilerplate project">
+        <meta name="description" content="A Codeigniter-Boilerplate example">
     <meta name="author" content="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,7 @@
   
     <link rel="stylesheet" href="/css/style.css?v=2">
     <link rel="stylesheet" href="/css/BP/homepage.css?v=2">
+    <link rel="stylesheet" href="/css/BP/example.css?v=2">
     <script src="/js/libs/modernizr-1.7.min.js"></script>
 
       <link  href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" >
@@ -31,59 +32,37 @@
     <header>
     <nav>
     <ul>
-        <li class="active"><a href="homepage">Homepage</a></li>
-        <li class=""><a href="example">Example</a></li>
+        <li class=""><a href="homepage">Homepage</a></li>
+        <li class="active"><a href="example">Example</a></li>
     </ul>
 </nav>    </header>
     <div id="main" role="main">
 
     <div class="clearfix"></div>
-<h2>Codeigniter-Boilerplate</h2>
-<h3>Easy structure builder</h3>
+<h2>Example of <span>Sunday</span></h2>
 
-<ul>
+<h3>Code to produce this page</h3>
+<pre>
+class Example extends BP_Controller {
 
-    <li>
-   Codeigniter-Boilerplate helps you start immediately a new project thanks to a<br>
-   simple template based on <a href="http://html5boilerplate.com/" target ="_blank">HTML5 Boilerplate</a>. This guarante the best <br>
-   crossbrowser experience and fast/easy CSS styling.</li>
+    public function index()
+    {
 
-   <li>
-   Codeigniter-Boilerplate has a prebuild structure which encapsulates single page <br>
-   views into a container view which shares parts of code as header, footer and script.<br>
-   </li>
+        $this->title = "Example!";
+        $this->description = "A Codeigniter-Boilerplate example";
+        $this->css = array("BP/homepage.css","BP/example.css");
+        $this->GFont = array("Lobster","Puritan");
+        $toView["day"] = strftime("%A",strtotime("today"));
 
-   <li>
-   Codeigniter-Boilerplate has the primarly aim to help developer building simple <br>
-   pages in the shortest time but without rigid structures, that means: allowing <br>
-   definition of custom elements for any pages without resctrictions. <br>
-   Developer as fast access to title, description, javascript, css, Google Font<br>
-   and (obviously) content for any single page.
-   </li>
-
-</ul>
-
-
-<h3>Technical notes</h3>
-<ul>
-    <li>Codeigniter Version: 2.0.2</li>
-    <li>JQuery Version: 1.5.1 (waiting for HTML5 BP update)</li>
-    <li>HTML5 BP Version: 1.0 Stripped</li>
-</ul>
-
-<h3>CI Configurations</h3>
-<p>Codeigniter configuration for Boilerplate starts with:</p>
-<ul>
-    <li>Autoload: url helper</li>
-    <li>Routes: default_controller = "homepage"</li>
-    <li>Index.php: subclass_prefix = "BP_"</li>
-    <li>Base url: http://localhost/codeigniter-boilerplate</li>
-</ul>
-<br>
+        $this->buildContent($toView);
+        $this->renderPage();
+    }
+}
+</pre>
 
 <img src="/images/BP/logo.png" id="logo"/>
 
-<p>See you!</p>    </div>
+    </div>
     <footer>
 
     </footer>

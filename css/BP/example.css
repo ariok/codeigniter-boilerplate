@@ -1,0 +1,18 @@
+pre {
+    width:500px;
+    background-color:rgba(57,50,42,0.6);
+
+    color:#fff;
+    font-family:arial;
+    text-shadow:1px 1px 0 rgba(0,0,0,0.6);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+h2 span {   
+    color:#ab251b;
+}
+
+#logo{
+    top:210px;
+}
