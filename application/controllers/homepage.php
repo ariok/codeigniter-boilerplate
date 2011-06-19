@@ -11,7 +11,7 @@ class Homepage extends BP_Controller {
         /*Page dedicated JS - CSS - Google Fonts
         $this->javascript = array("homepage.js");
         */
-        $this->css = array("homepage.css");
+        $this->css = array("BP/homepage.css");
         $this->GFont = array("Lobster","Puritan");
 
         /*Define single page content as usual*/
