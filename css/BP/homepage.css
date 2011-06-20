@@ -2,6 +2,13 @@ body{
     background-image:url("../../images/BP/bg.jpg");
 }
 
+#tweet {    
+    position:absolute;
+    top: 430px;
+    left:700px;
+    z-index:2;
+}
+
 #container {
     margin:20px auto 0 auto;
     position:relative;
@@ -85,20 +92,16 @@ h2 {
 }
 
 h2:hover {
-    /* Firefox */
-
+ /* Firefox */
 -moz-transform: rotate(1deg);
 
 /* WebKit */
-
 -webkit-transform: rotate(1deg);
 
 /* Opera */
-
 -o-transform: rotate(1deg);
 
 /* Standard */
-
 transform: rotate(1deg);
 }
 
