@@ -1,6 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/**
+ * BP_Controller
+ * Provides a basic extension of CI_Controller to implement codeigniter-boilerplate
+ * logics. 
+ *
+ * Extend this class to create a page.
+ *
+ * @package		codeigniter-boilerplate
+ * @author		Yari D'areglia yari@jumpzero.com
+ */
 class BP_Controller extends CI_Controller{
+    
     //Page info
     public $pageID = false;
     public $view = false;
@@ -37,8 +47,8 @@ class BP_Controller extends CI_Controller{
         $toTpl["description"] = $this->description;
         $toTpl["GFont"] = $this->GFont;
         
-        /* Menu: to avoid use boilerplate menu comment this code
-         * and remove $menu reference from templates (i.e. views/template/main.php)*/
+        /* Menu: to avoid use boilerplate menu set hasNav to false
+         * and remove $menu reference from templates (i.e. from views/template/main.php)*/
         if($this->hasNav){
             $this->load->helper("nav");
             $toMenu["pageID"] = $this->pageID;

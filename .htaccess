@@ -1,18 +1,10 @@
-<IfModule mod_rewrite.c>
+# Make sure directory listing is disabled
+Options +FollowSymLinks -Indexes
+RewriteEngine on
 
-        # Make sure directory listing is disabled
-        Options +FollowSymLinks -Indexes
-        RewriteEngine on
+# Send request via index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-        # Send request via index.php
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteCond %{REQUEST_FILENAME} !-d
 
-        <IfModule mod_php5.c>
-                RewriteRule ^(.*)$ index.php/$1 [L]
-        </IfModule>
-
-        <IfModule !mod_php5.c>
-                RewriteRule ^(.*)$ index.php?/$1 [L]
-        </IfModule>
-</IfModule>
+RewriteRule ^(.*)$ index.php/$1 [L]
