@@ -4,11 +4,17 @@ body{
 
 #tweet {    
     position:absolute;
-    top: 430px;
-    left:700px;
+    top: 20px;
+    left:850px;
     z-index:2;
 }
 
+#gplus{
+    position:absolute;
+    top: 20px;
+    left:800px;
+    z-index:2;
+}
 #container {
     margin:20px auto 0 auto;
     position:relative;
