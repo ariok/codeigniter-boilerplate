@@ -19,8 +19,11 @@ class Homepage extends BP_Controller {
         $toView['other_data'] = "<p>See you!</p>";
         
         /*short cut to load->view("pages/page_name",$content,true)*/
-        $this->buildContent($toView);
+        $this->build_content($toView);
 
-        $this->renderPage();
+        $this->render_page();
     }
 }
+
+/*End of file homepage.php*/
+/*Location .application/controllers/example.php*/

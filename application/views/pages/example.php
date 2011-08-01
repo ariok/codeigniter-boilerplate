@@ -14,11 +14,10 @@ class Example extends BP_Controller {
         $this->GFont = array("Lobster","Puritan");
         $toView["day"] = strftime("%A",strtotime("today"));
 
-        $this->buildContent($toView);
-        $this->renderPage();
+        $this->build_content($toView);
+        $this->render_page();
     }
 }
 </pre>
 
 <img src="<?php echo base_url()?>images/BP/logo.png" id="logo"/>
-

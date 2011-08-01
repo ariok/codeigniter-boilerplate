@@ -22,8 +22,10 @@ class Example extends BP_Controller {
         $toView["day"] = strftime("%A",strtotime("today"));
 
         /*short cut to load->view("pages/page_name",$content,true)*/
-        $this->buildContent($toView);
+        $this->build_content($toView);
 
-        $this->renderPage();
+        $this->render_page();
     }
 }
+/*End of file example.php*/
+/*Location .application/controllers/example.php*/
