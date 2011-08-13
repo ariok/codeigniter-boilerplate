@@ -72,7 +72,7 @@
 
   <!-- scripts -->
   <?php /* codeigniter-boilerplate: Scripts *********************************/?>
-  <?php foreach($javascript as $j):?>
+  <?php foreach($javascript as $js):?>
   <script src="<?php echo base_url()?>js/<?php echo $js?>"></script>
   <?php endforeach;?>
   <!-- end scripts-->
