@@ -31,8 +31,8 @@
 <h3>Technical notes</h3>
 <ul>
     <li>Codeigniter Version: 2.0.2</li>
-    <li>JQuery Version: 1.5.1 (waiting for HTML5 BP update)</li>
-    <li>HTML5 BP Version: 1.0 Stripped</li>
+    <li>JQuery Version: 1.6.2</li>
+    <li>HTML5 BP Version: 2.0 Stripped</li>
 </ul>
 
 <h3>CI Configurations</h3>
