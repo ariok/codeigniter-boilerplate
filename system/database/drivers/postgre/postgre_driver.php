@@ -385,7 +385,6 @@ class CI_DB_postgre_driver extends CI_DB {
 		}
 
 		$row = $query->row();
-		$this->_reset_select();
 		return (int) $row->numrows;
 	}
 

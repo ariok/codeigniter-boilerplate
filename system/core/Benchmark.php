@@ -29,11 +29,6 @@
  */
 class CI_Benchmark {
 
-	/**
-	 * List of all benchmark markers and when they were added
-	 *
-	 * @var array
-	 */
 	var $marker = array();
 
 	// --------------------------------------------------------------------

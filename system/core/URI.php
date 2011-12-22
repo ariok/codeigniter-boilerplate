@@ -28,34 +28,9 @@
  */
 class CI_URI {
 
-	/**
-	 * List of cached uri segments
-	 *
-	 * @var array
-	 * @access public
-	 */
 	var	$keyval			= array();
-	/**
-	 * Current uri string
-	 *
-	 * @var string
-	 * @access public
-	 */
 	var $uri_string;
-	/**
-	 * List of uri segments
-	 *
-	 * @var array
-	 * @access public
-	 */
 	var $segments		= array();
-	/**
-	 * Re-indexed list of uri segments
-	 * Starts at 1 instead of 0
-	 *
-	 * @var array
-	 * @access public
-	 */
 	var $rsegments		= array();
 
 	/**
@@ -152,7 +127,6 @@ class CI_URI {
 	 * Set the URI String
 	 *
 	 * @access	public
-	 * @param 	string
 	 * @return	string
 	 */
 	function _set_uri_string($str)
@@ -391,11 +365,6 @@ class CI_URI {
 	}
 	/**
 	 * Identical to above only it uses the re-routed segment array
-	 *
-	 * @access 	public
-	 * @param 	integer	the starting segment number
-	 * @param 	array	an array of default values
-	 * @return 	array
 	 *
 	 */
 	function ruri_to_assoc($n = 3, $default = array())

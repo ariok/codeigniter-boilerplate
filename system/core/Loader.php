@@ -29,91 +29,18 @@
 class CI_Loader {
 
 	// All these are set automatically. Don't mess with them.
-	/**
-	 * Nesting level of the output buffering mechanism
-	 *
-	 * @var int
-	 * @access protected
-	 */
 	protected $_ci_ob_level;
-	/**
-	 * List of paths to load views from
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_view_paths		= array();
-	/**
-	 * List of paths to load libraries from
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_library_paths	= array();
-	/**
-	 * List of paths to load models from
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_model_paths		= array();
-	/**
-	 * List of paths to load helpers from
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_helper_paths		= array();
-	/**
-	 * List of loaded base classes
-	 * Set by the controller class
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_base_classes		= array(); // Set by the controller class
-	/**
-	 * List of cached variables
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_cached_vars		= array();
-	/**
-	 * List of loaded classes
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_classes			= array();
-	/**
-	 * List of loaded files
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_loaded_files		= array();
-	/**
-	 * List of loaded models
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_models			= array();
-	/**
-	 * List of loaded helpers
-	 *
-	 * @var array
-	 * @access protected
-	 */
 	protected $_ci_helpers			= array();
-	/**
-	 * List of class name mappings
-	 *
-	 * @var array
-	 * @access protected
-	 */
-	protected $_ci_varmap			= array('unit_test' => 'unit',
+	protected $_ci_varmap			= array('unit_test' => 'unit', 
 											'user_agent' => 'agent');
 
 	/**
@@ -128,29 +55,24 @@ class CI_Loader {
 		$this->_ci_helper_paths = array(APPPATH, BASEPATH);
 		$this->_ci_model_paths = array(APPPATH);
 		$this->_ci_view_paths = array(APPPATH.'views/'	=> TRUE);
-
+		
 		log_message('debug', "Loader Class Initialized");
 	}
 
 	// --------------------------------------------------------------------
-
+	
 	/**
-	 * Initialize the Loader
+	 * Set _base_classes variable
 	 *
 	 * This method is called once in CI_Controller.
 	 *
-	 * @param 	array
+	 * @param 	array 	
 	 * @return 	object
 	 */
-	public function initialize()
+	public function set_base_classes()
 	{
-		$this->_ci_classes = array();
-		$this->_ci_loaded_files = array();
-		$this->_ci_models = array();
 		$this->_base_classes =& is_loaded();
-
-		$this->_ci_autoloader();
-
+		
 		return $this;
 	}
 
@@ -174,7 +96,7 @@ class CI_Loader {
 		{
 			return $this->_ci_classes[$class];
 		}
-
+				
 		return FALSE;
 	}
 
@@ -444,7 +366,6 @@ class CI_Loader {
 	 * the controller class and its "view" files.
 	 *
 	 * @param	array
-	 * @param 	string
 	 * @return	void
 	 */
 	public function vars($vars = array(), $val = '')
@@ -586,8 +507,6 @@ class CI_Loader {
 	 * Loads a config file
 	 *
 	 * @param	string
-	 * @param	bool
-	 * @param 	bool
 	 * @return	void
 	 */
 	public function config($file = '', $use_sections = FALSE, $fail_gracefully = FALSE)
@@ -616,11 +535,6 @@ class CI_Loader {
 			require BASEPATH.'libraries/Driver.php';
 		}
 
-		if ($library == '')
-		{
-			return FALSE;
-		}
-
 		// We can save the loader some time since Drivers will *always* be in a subfolder,
 		// and typically identically named to the library
 		if ( ! strpos($library, '/'))
@@ -639,13 +553,13 @@ class CI_Loader {
 	 * Prepends a parent path to the library, model, helper, and config path arrays
 	 *
 	 * @param	string
-	 * @param 	boolean
+	 * @param 	boolean 	
 	 * @return	void
 	 */
 	public function add_package_path($path, $view_cascade=TRUE)
 	{
 		$path = rtrim($path, '/').'/';
-
+		
 		array_unshift($this->_ci_library_paths, $path);
 		array_unshift($this->_ci_model_paths, $path);
 		array_unshift($this->_ci_helper_paths, $path);
@@ -681,7 +595,6 @@ class CI_Loader {
 	 * If no path is provided, the most recently added path is removed.
 	 *
 	 * @param	type
-	 * @param 	bool
 	 * @return	type
 	 */
 	public function remove_package_path($path = '', $remove_config_path = TRUE)
@@ -706,7 +619,7 @@ class CI_Loader {
 					unset($this->{$var}[$key]);
 				}
 			}
-
+			
 			if (isset($this->_ci_view_paths[$path.'views/']))
 			{
 				unset($this->_ci_view_paths[$path.'views/']);
@@ -745,7 +658,7 @@ class CI_Loader {
 		{
 			$$_ci_val = ( ! isset($_ci_data[$_ci_val])) ? FALSE : $_ci_data[$_ci_val];
 		}
-
+		
 		$file_exists = FALSE;
 
 		// Set the path to the requested file
@@ -767,11 +680,11 @@ class CI_Loader {
 					$file_exists = TRUE;
 					break;
 				}
-
+				
 				if ( ! $cascade)
 				{
 					break;
-				}
+				}				
 			}
 		}
 
@@ -1000,7 +913,6 @@ class CI_Loader {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @param	bool
 	 * @param	string	an optional object name
 	 * @return	null
 	 */
@@ -1023,22 +935,22 @@ class CI_Loader {
 					// first, global next
 					if (defined('ENVIRONMENT') AND file_exists($path .'config/'.ENVIRONMENT.'/'.strtolower($class).'.php'))
 					{
-						include($path .'config/'.ENVIRONMENT.'/'.strtolower($class).'.php');
+						include_once($path .'config/'.ENVIRONMENT.'/'.strtolower($class).'.php');
 						break;
 					}
 					elseif (defined('ENVIRONMENT') AND file_exists($path .'config/'.ENVIRONMENT.'/'.ucfirst(strtolower($class)).'.php'))
 					{
-						include($path .'config/'.ENVIRONMENT.'/'.ucfirst(strtolower($class)).'.php');
+						include_once($path .'config/'.ENVIRONMENT.'/'.ucfirst(strtolower($class)).'.php');
 						break;
 					}
 					elseif (file_exists($path .'config/'.strtolower($class).'.php'))
 					{
-						include($path .'config/'.strtolower($class).'.php');
+						include_once($path .'config/'.strtolower($class).'.php');
 						break;
 					}
 					elseif (file_exists($path .'config/'.ucfirst(strtolower($class)).'.php'))
 					{
-						include($path .'config/'.ucfirst(strtolower($class)).'.php');
+						include_once($path .'config/'.ucfirst(strtolower($class)).'.php');
 						break;
 					}
 				}
@@ -1108,19 +1020,23 @@ class CI_Loader {
 	 * The config/autoload.php file contains an array that permits sub-systems,
 	 * libraries, and helpers to be loaded automatically.
 	 *
+	 * This function is public, as it's used in the CI_Controller class.  
+	 * However, there is no reason you should ever needs to use it.
+	 *
 	 * @param	array
 	 * @return	void
 	 */
-	private function _ci_autoloader()
+	public function ci_autoloader()
 	{
 		if (defined('ENVIRONMENT') AND file_exists(APPPATH.'config/'.ENVIRONMENT.'/autoload.php'))
 		{
-			include(APPPATH.'config/'.ENVIRONMENT.'/autoload.php');
+			include_once(APPPATH.'config/'.ENVIRONMENT.'/autoload.php');
 		}
 		else
 		{
-			include(APPPATH.'config/autoload.php');
+			include_once(APPPATH.'config/autoload.php');
 		}
+		
 
 		if ( ! isset($autoload))
 		{
@@ -1206,7 +1122,6 @@ class CI_Loader {
 	/**
 	 * Get a reference to a specific library or model
 	 *
-	 * @param 	string
 	 * @return	bool
 	 */
 	protected function &_ci_get_component($component)
@@ -1223,7 +1138,6 @@ class CI_Loader {
 	 * This function preps the name of various items to make loading them more reliable.
 	 *
 	 * @param	mixed
-	 * @param 	string
 	 * @return	array
 	 */
 	protected function _ci_prep_filename($filename, $extension)

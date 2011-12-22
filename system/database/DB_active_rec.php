@@ -870,11 +870,11 @@ class CI_DB_active_record extends CI_DB_driver {
 	 */
 	public function limit($value, $offset = '')
 	{
-		$this->ar_limit = (int) $value;
+		$this->ar_limit = $value;
 
 		if ($offset != '')
 		{
-			$this->ar_offset = (int) $offset;
+			$this->ar_offset = $offset;
 		}
 
 		return $this;
@@ -1322,7 +1322,7 @@ class CI_DB_active_record extends CI_DB_driver {
 		{
 			if ($this->db_debug)
 			{
-				return $this->display_error('db_must_use_index');
+				return $this->display_error('db_myst_use_index');
 			}
 
 			return FALSE;
