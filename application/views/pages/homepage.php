@@ -32,7 +32,7 @@
 <ul>
     <li>Codeigniter Version: 2.1</li>
     <li>JQuery Version: 1.7.1</li>
-    <li>HTML5 BP Version: 2.0 Stripped</li>
+    <li>HTML5 BP Version: 3.0 Stripped</li>
 </ul>
 
 <h3>CI Configurations</h3>

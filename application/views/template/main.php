@@ -1,7 +1,7 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
@@ -24,30 +24,25 @@
   <?php /* Generic site description: used if the page object has not a description */?>
   <meta name="description" content="__SITE DESCRIPTION HERE__">
   <?php endif;?>
-  <meta name="author" content="">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- CSS concatenated and minified via ant build script-->
+  <meta name="viewport" content="width=device-width">
   <?php /* codeigniter-boilerplate: Styles **********************************/ ?>
   <link rel="stylesheet" href="<?php echo base_url()?>css/style.css">
   <?php foreach($css as $c):?>
   <link rel="stylesheet" href="<?php echo base_url()?>css/<?php echo $c?>">
   <?php endforeach;?>  
-  <!-- end CSS-->
 
-  <script src="<?php echo base_url()?>js/libs/modernizr-2.0.6.min.js"></script>
-  
+  <script src="<?php echo base_url()?>js/libs/modernizr-2.5.3.min.js"></script>
+
   <?php /* codeigniter-boilerplate: Google Fonts ****************************/ ?>
   <?php foreach($GFont as $f):?>
   <link  href="http://fonts.googleapis.com/css?family=<?php echo $f?>" rel="stylesheet" type="text/css" >
   <?php endforeach;?>  
-  
 </head>
-
 <body>
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <div id="container">
+<div id="container">
     <header>
     <?php 
     /* codeigniter-boilerplate: main navigation *******************************/
@@ -87,11 +82,5 @@
     });
   </script>
 
-
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
 </body>
 </html>
