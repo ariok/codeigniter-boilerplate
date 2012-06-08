@@ -7,77 +7,89 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>Codeigniter-Boilerplate</title>
-  
-        <meta name="description" content="Codeigniter-Boilerplate project">
+    <title>Codeigniter-Boilerplate</title>
+
+    <meta name="description" content="Codeigniter-Boilerplate helps you start a new project in a few minutes thanks to a simple template based on HTML5 Boilerplate and Codeigniter.">
     <meta name="author" content="">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/style.css?v=2">
-    <link rel="stylesheet" href="css/BP/homepage.css?v=2">
-    <script src="js/libs/modernizr-1.7.min.js"></script>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="css/style_data.css?v=1">
+    <script src="js/libs/modernizr-2.5.3.min.js"></script>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <link  href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" >
     <link  href="http://fonts.googleapis.com/css?family=Puritan" rel="stylesheet" type="text/css" >
- 
 </head>
 
 <body>
 
   <div id="container">
     <header>
-    <nav>
-        <ul>
-            <li class="active"><a href="index">Homepage</a></li>
-            <li class=""><a href="example">Example</a></li>
-            <li class=""><a href="https://github.com/ariok/codeigniter-boilerplate">Download</a></li>
-        </ul>
-        <div id="tweet">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="yariok">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-        </div>
-        <div id="gplus">
-            <g:plusone size="medium" count="false"></g:plusone>
-        </div>
-    </nav>
+        <a href="https://github.com/ariok/codeigniter-boilerplate" class="forkme"></a>
+        <nav>
+            <ul>
+                <li class="download"><a class='ir' href="https://github.com/ariok/codeigniter-boilerplate/zipball/master">Download</a></li>
+                <li class="follow"><a class='ir' href="http://twitter.com/yariok">@Yariok</a></li>
+                <li class="clearfix"></li>
+            </ul>
+        </nav>
+        <h1 class='ir'>Codeigniter-Boilerplate</h1>
+        <div class='ir pot'>Let's do it faster</div>
+        <div class='ir ci'>asd</div>
+        <div class='ir hbp'>asd</div>
     </header>
+
     <div id="main" role="main">
 
-    <div class="clearfix"></div>
-    <h2>Codeigniter-Boilerplate</h2>
-    <h3>Easy structure builder</h3>
-
+    <h3 class='info'>Easy structure builder</h3>
     <ul>
-        <li>Codeigniter-Boilerplate helps you start a new project in a few minutes <br>
-            thanks to a simple template, based on <a href="http://html5boilerplate.com/" target ="_blank">HTML5 Boilerplate</a>, resulting in the <br>
+        <li>Codeigniter-Boilerplate helps you start a new project in a few minutes
+            thanks to a simple template, based on <a href="http://html5boilerplate.com/" target ="_blank">HTML5 Boilerplate</a>, resulting in the
             best cross-browser experience and fast/easy CSS styling.<br>
         </li>
 
        <li>
-       Codeigniter-Boilerplate has a prebuild structure which encapsulates single page <br>
-       views into a container view which shares parts of code like header, footer and script.<br>
+       Codeigniter-Boilerplate has a prebuild structure which encapsulates single page
+       views into a container view which shares parts of code like header, footer and script.
        </li>
 
        <li>
-        Codeigniter-Boilerplate has the primary aim to help developers build simple <br>
-        pages as fast as possible, but without rigid structures. This means allowing the<br>
-        definition of custom elements for any page without restrictions. <br>
-        Developers here have fast access to title, description, javascripts, css, Google Fonts<br>
+        Codeigniter-Boilerplate has the primary aim to help developers build simple
+        pages as fast as possible, but without rigid structures. This means allowing the
+        definition of custom elements for any page without restrictions.
+        Developers here have fast access to title, description, javascripts, css, Google Fonts
         and (obviously) content for any single page.
        </li>
 
     </ul>
 
+    <h3 class='code'>Let's code!</h3>
+    <pre>
+    <span class='l'>class</span> Example extends <span class='n'>BP_Controller</span> {
 
-    <h3>Technical notes</h3>
-    <ul>
-        <li>Codeigniter Version: 2.1</li>
-        <li>JQuery Version: 1.7.1</li>
-        <li>HTML5 BP Version: 3.0 Stripped</li>
-    </ul>
+        <span class='f'>public function</span> index()
+        {
+            <span class='com'>//Meta tag information</span>
+            <span class='w'>$this</span><span class='a'>-></span>title = <span class='s'>"Example!"</span>;
+            <span class='w'>$this</span><span class='a'>-></span>description = <span class='s'>"A Codeigniter-Boilerplate example"</span>;
+            <span class='com'>//Defining CSS styles</span>
+            <span class='w'>$this</span><span class='a'>-></span>css = array(<span class='s'>"BP/homepage.css"</span>,<span class='s'>"BP/example.css"</span>);
+            <span class='com'>//Loading GoogleFonts fonts</span>
+            <span class='w'>$this</span><span class='a'>-></span>GFont = array(<span class='s'>"Lobster"</span>,<span class='s'>"Puritan"</span>);
+            <span class='com'>//Passing custom data to the View </span>
+            <span class='w'>$toView</span>[<span class='s'>"color"</span>] = <span class='s'>"Green"</span>;
 
-    <h3>CI Configurations</h3>
+            <span class='com'>//Render the page</span>
+            <span class='w'>$this</span><span class='a'>-></span><span class='c'>build_content</span>($toView);
+            <span class='w'>$this</span><span class='a'>-></span><span class='c'>render_page</span>();
+        }
+    }
+    </pre>
+    <br>
+
+    <h3 class='conf'>CI Configurations</h3>
     <p>Codeigniter configuration for Boilerplate starts with:</p>
     <ul>
         <li>Autoload: url helper</li>
@@ -85,11 +97,13 @@
         <li>Index.php: subclass_prefix = "BP_"</li>
         <li>Base url: http://localhost/codeigniter-boilerplate</li>
     </ul>
-    <br>
 
-    <img src="images/BP/logo.png" id="logo"/>
+    <h3 class='code'>Version Information</h3>
+    <p class='ci-v'>V2.1</p>
+    <p class='hbp-v'>V3.0 Stripped</p>
+    <div class="clearfix"></div>
 
-    <p>See you!</p>    </div>
+    </div>
     <footer>
 
     </footer>
