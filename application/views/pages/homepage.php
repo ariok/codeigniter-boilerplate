@@ -46,6 +46,6 @@
 </ul>
 <br>
 
-<img src="<?php echo base_url()?>images/BP/logo.png" id="logo"/>
+<img src="<?php echo base_url('images/BP/logo.png')?>" id="logo"/>
 
 <?php echo $other_data?>
