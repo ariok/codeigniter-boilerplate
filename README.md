@@ -1,4 +1,4 @@
-# Codeigniter Boilerplate
+# Codeigniter Boilerplate  [DISCONTINUED]
 
 A codeigniter Boilerplate to quickly get you up and running with [codeigniter][1] with the best practises applied from [html5boilerplate][2].
 
